@@ -5,11 +5,14 @@ The Ising model is a mathematical model of ferromagnetism in statistical mechani
 ## Theory
 
 Electrons have a quantum mechanical property of spin, which when measured along any axis take the value of either $-\hbar/2$ or $\hbar/2$. The spin of an electron is closely related to its magnetic moment, as if the electron is a tiny bar magnet with both a north and a south pole. In this sense, the north pole can either point up or down. The magnetic moment between two nearby electrons creates a force between them, so that they prefer to line up anti-parallel, or anti-aligned. But there are two important points to consider:
+
 - Electrons repel each other electrostatically since they have the same charge, and
 - the Pauli exclusion principle, which states that no two electron can be in the same quantum mechanical state in the same location.
+
 Considering electrons situated on a regular grid, focus on the nearest-neighbour pair. When the pair is anti-aligned, they can be close together as the electrons are not in the same quantum state and there will be no electrostatic repulsion. When aligned, the electrons cannot get too close together or else break the exclusion principle, and there is little electrostatic repulsion. Interestingly, it is energetically favourable for the electrons to be in the parallel spin state. The difference in energy between parallel and anti-parallel states is mainly electrostatic in origin, with little from the magnetic interaction. As such, the electrons in a regular lattice tend to be aligned in the same direction, with the indiviidual magnetic moments of each adding up to create a large net magnetic moment. This is Ising's model for ferromagnetism. 
 
-Consider a 2D lattice with spins at each lattice site. The $i$th spin can take one of two values: $s_i = \pm 1$. We will consider only the nearest neighbours, that being above, below, to the left and to the right. We will not consider diagonal interactions. This is a good approximation because Pauli's exclusion principle is only relevant if the spins are in the immediate proximity to each other.
+Consider a 2D lattice with spins at each lattice site. The ith spin can take one of two values: $s_i = \pm 1$. We will consider only the nearest neighbours, that being above, below, to the left and to the right. We will not consider diagonal interactions. This is a good approximation because Pauli's exclusion principle is only relevant if the spins are in the immediate proximity to each other.
 
-The energy of the system is given by
+The energy of the system is given by:
+
 $E = \sum_{i=1}^{N} E_i$ and $E_i = - \frac{J}{2} \sum_{j = i \pm 1} s_i s_j$
