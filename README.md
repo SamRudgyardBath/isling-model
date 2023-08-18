@@ -17,7 +17,7 @@ The energy of the system is given by:
 
 $$ \tag{1} E = \sum_{i=1}^{N} E_i \text{  and  } E_i = - \frac{J}{2} \sum_{j = i \pm 1} s_i s_j$$
 
-where $E$ is the total energy, $E_i$ is the energy of the ith electron, $s_i$ is the ith spin, and $J$ is the exchange constant ($J > 0$ for ferromagnets). $J$ has dimensions of energy. 
+where $E$ is the total energy, $E_i$ is the energy of the ith index, $s_i$ is the ith spin, and $J$ is the exchange constant ($J > 0$ for ferromagnets). $J$ has dimensions of energy. To clarify, the sum over $j = i \pm 1$ for the $E_i$ equation means summing over nearest neighbours.
 
 The energy of the lattice depends on whether the majority of spins are aligned or anti-aligned:
 
