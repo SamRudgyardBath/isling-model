@@ -15,4 +15,4 @@ Consider a 2D lattice with spins at each lattice site. The ith spin can take one
 
 The energy of the system is given by:
 
-$E = \sum_{i=1}^{N} E_i$ and $E_i = - \frac{J}{2} \sum_{j = i \pm 1} s_i s_j$
+\[E = \sum_{i=1}^{N} E_i] and \[E_i = - \frac{J}{2} \sum_{j = i \pm 1} s_i s_j]
