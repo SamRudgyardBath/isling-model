@@ -15,4 +15,19 @@ Consider a 2D lattice with spins at each lattice site. The ith spin can take one
 
 The energy of the system is given by:
 
-$$ \tag{1} E = \sum_{i=1}^{N} E_i \text{ and } E_i = - \frac{J}{2} \sum_{j = i \pm 1} s_i s_j$$
+$$ \tag{1} E = \sum_{i=1}^{N} E_i \text{  and  } E_i = - \frac{J}{2} \sum_{j = i \pm 1} s_i s_j$$
+
+where $E$ is the total energy, $E_i$ is the energy of the ith electron, $s_i$ is the ith spin, and $J$ is the exchange constant ($J > 0$ for ferromagnets). $J$ has dimensions of energy. 
+
+The energy of the lattice depends on whether the majority of spins are aligned or anti-aligned:
+
+- If all spins are aligned $E = -2JN$. This is the lowest energy state of the system.
+- If the spins are random, $E \approx 0$.
+
+Now let the system have a temperature $T$, such that the electrons have some kinetic energy and move about a mean position. If $T$ is sufficiently high, the spins can spontaneously flip! The probability of a spin flipping from state 1 to state 2, $P_{12}$ is given by the Boltzmann factor:
+
+$$ P_{12} \prop \exp \left( - \frac{E_{12}}{k_B T} \right) $$
+
+where $E_{12} = E_2 - E_1$ is the difference in the energies of the two states, and $k_B$ is  Boltzmann's constant.
+
+- If $E_1 > E_2$, $E_{12} < 0$, and so $P_{12} > P_{21}$
