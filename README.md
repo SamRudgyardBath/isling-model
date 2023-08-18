@@ -11,13 +11,11 @@ Electrons have a quantum mechanical property of spin, which when measured along 
 
 Considering electrons situated on a regular grid, focus on the nearest-neighbour pair. When the pair is anti-aligned, they can be close together as the electrons are not in the same quantum state and there will be no electrostatic repulsion. When aligned, the electrons cannot get too close together or else break the exclusion principle, and there is little electrostatic repulsion. Interestingly, it is energetically favourable for the electrons to be in the parallel spin state. The difference in energy between parallel and anti-parallel states is mainly electrostatic in origin, with little from the magnetic interaction. As such, the electrons in a regular lattice tend to be aligned in the same direction, with the indiviidual magnetic moments of each adding up to create a large net magnetic moment. This is Ising's model for ferromagnetism. 
 
-Consider a 2D lattice with spins at each lattice site. The ith spin can take one of two values: $s_i = \pm 1$. We will consider only the nearest neighbours, that being above, below, to the left and to the right. We will not consider diagonal interactions. This is a good approximation because Pauli's exclusion principle is only relevant if the spins are in the immediate proximity to each other.
-
-The energy of the system is given by:
+Consider a 2D lattice with spins at each lattice site. The ith spin can take one of two values: $s_i = \pm 1$, for spin up or spin down. The energy of the system is given by:
 
 $$ \tag{1} E = \sum_{i=1}^{N} E_i \text{  and  } E_i = - \frac{J}{2} \sum_{j = i \pm 1} s_i s_j$$
 
-where $E$ is the total energy, $E_i$ is the energy of the ith index, $s_i$ is the ith spin, and $J$ is the exchange constant ($J > 0$ for ferromagnets). $J$ has dimensions of energy. To clarify, the sum over $j = i \pm 1$ for the $E_i$ equation means summing over nearest neighbours.
+where $E$ is the total energy, $E_i$ is the energy of the ith index, $s_i$ is the ith spin, and $J$ is the exchange constant ($J > 0$ for ferromagnets). $J$ has dimensions of energy. To clarify, the sum over $j = i \pm 1$ for the $E_i$ equation means summing over nearest neighbours, such that we only look at states above, below, to the left or and to the right of the cell of interest. We will not consider diagonal interactions. This is a good approximation because Pauli's exclusion principle is only relevant if the spins are in the immediate proximity to each other.
 
 The energy of the lattice depends on whether the majority of spins are aligned or anti-aligned:
 
