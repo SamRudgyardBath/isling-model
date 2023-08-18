@@ -24,10 +24,11 @@ The energy of the lattice depends on whether the majority of spins are aligned o
 - If all spins are aligned $E = -2JN$. This is the lowest energy state of the system.
 - If the spins are random, $E \approx 0$.
 
-Now let the system have a temperature $T$, such that the electrons have some kinetic energy and move about a mean position. If $T$ is sufficiently high, the spins can spontaneously flip! The probability of a spin flipping from state 1 to state 2, $P_{12}$ is given by the Boltzmann factor:
+Now let the system have a temperature $T$, such that the electrons have some kinetic energy and move about a mean position. If $T$ is sufficiently high, the spins can spontaneously flip! The probability of a spin flipping from state 1 to state 2, $P_{12}$, is given by the Boltzmann factor:
 
-$$ P_{12} \prop \exp \left( - \frac{E_{12}}{k_B T} \right) $$
+$$ P_{12} \propto \exp \left( - \frac{E_{12}}{k_B T} \right) $$
 
 where $E_{12} = E_2 - E_1$ is the difference in the energies of the two states, and $k_B$ is  Boltzmann's constant.
 
-- If $E_1 > E_2$, $E_{12} < 0$, and so $P_{12} > P_{21}$
+- If $E_1 > E_2$, $E_{12} < 0$, and so $P_{12} > P_{21} \implies$ more likely to flip to a lower energy state.
+- If $\left| E_{12} \right| \ll k_B T$, $P_{12} \approx P_{21} \implies$ at high $T$ flips in either direction are equally likely.
