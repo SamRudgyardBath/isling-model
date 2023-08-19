@@ -17,10 +17,10 @@ beta = 1
 def GetEnergy(x, y):
     thisSpin = lattice[x, y]
     
-    topSpin = lattice[x, y - 1] if y != 0 else 0
-    bottomSpin = lattice[x, y + 1] if y != gridLength-1 else 0
-    leftSpin = lattice[x - 1, y] if x != 0 else 0
-    rightSpin = lattice[x + 1, y] if x != gridLength-1 else 0
+    topSpin = lattice[x, y-1] if y != 0 else 0
+    bottomSpin = lattice[x, y+1] if y != gridLength-1 else 0
+    leftSpin = lattice[x-1, y] if x != 0 else 0
+    rightSpin = lattice[x+1, y] if x != gridLength-1 else 0
     
     neighbours = [topSpin, bottomSpin, leftSpin, rightSpin]
     energy = 0
