@@ -6,10 +6,13 @@ Created on Fri Aug 18 17:22:03 2023
 @author: sam
 """
 
+import math
 import numpy as np
 import matplotlib.pyplot as plt
 
 gridLength = 100
+maxTime = 100000
+beta = 1
 
 def GetEnergy(x, y):
     thisSpin = lattice[x, y]
