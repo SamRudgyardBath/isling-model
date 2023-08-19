@@ -73,6 +73,10 @@ randomArray = np.random.random((gridLength, gridLength))
 lattice[randomArray >= 0.75] = 1
 lattice[randomArray < 0.75] = -1
 
-print(f'Total Energy: {GetTotalEnergy()} J')
+print(f'Total Energy at time t=0: {GetTotalEnergy()} J')
+
 Metropolis()
+
+print(f'Total Energy at time t={maxTime}: {GetTotalEnergy()} J')
+
 plt.imshow(lattice)
