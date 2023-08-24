@@ -59,13 +59,16 @@ def Metropolis():
         finalEnergy += -proposedSpin * lattice[x-1, y] if x != 0 else 0
         finalEnergy += -proposedSpin * lattice[x+1, y] if x != gridLength-1 else 0
         
-        if finalEnergy > initialEnergy:
-            probOfFlip = math.exp(-beta * (finalEnergy - initialEnergy))
-        else:
-            probOfFlip = 1
-            
-        if probOfFlip >= np.random.random():
+        dE = finalEnergy - initialEnergy
+        if (dE > 0) * (np.exp(-beta * (finalEnergy - initialEnergy)) > np.random.random()):
             lattice[x,y] = proposedSpin # Accept the proposed state!
+            
+        elif dE <= 0:
+            lattice[x,y] = proposedSpin # Accept the proposed state!
+            
+def CalcMag():
+    return np.sum(lattice)
+            
 
 # Initialise lattice structure
 lattice = np.zeros((gridLength, gridLength)) 
@@ -74,9 +77,11 @@ lattice[randomArray >= 0.75] = 1
 lattice[randomArray < 0.75] = -1
 
 print(f'Total Energy at time t=0: {GetTotalEnergy()} J')
+print(f'Total Magnetisation at time t=0: {CalcMag()}')
 
 Metropolis()
 
 print(f'Total Energy at time t={maxTime}: {GetTotalEnergy()} J')
+print(f'Total Magnetisation at time t={maxTime}: {CalcMag()}')
 
-plt.imshow(lattice)
+plt.imshow(lattice, cmap='bwr')
