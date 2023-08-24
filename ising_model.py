@@ -29,6 +29,7 @@ def GetEnergy(x, y):
         energy -= thisSpin * neighbouringSpin
     
     return energy
+latticePlot = np.zeros((4, gridLength, gridLength))
 
 def GetTotalEnergy():
     totEnergy = 0
@@ -83,5 +84,24 @@ Metropolis()
 
 print(f'Total Energy at time t={maxTime}: {GetTotalEnergy()} J')
 print(f'Total Magnetisation at time t={maxTime}: {CalcMag()}')
+fig, axes = plt.subplots(1, 2, figsize=(12,4))
+ax = axes[0]
+ax.plot(totSpinVals/gridLength**2)
+ax.set_xlabel('Algorithm Time Steps')
+ax.set_ylabel(r'Average Spin $\bar{m}$')
+ax.grid()
+ax = axes[1]
+ax.plot(totEnergyVals)
+ax.set_xlabel('Algorithm Time Steps')
+ax.set_ylabel(r'Energy $E/J$')
+ax.grid()
+fig.tight_layout()
+fig.suptitle(r'Evolution of Average Spin and Energy for $\beta J=$1')
+plt.show()
 
-plt.imshow(lattice, cmap='bwr')
+fig, axes = plt.subplots(2, 2, figsize=(5,5), gridspec_kw={'height_ratios': [1, 1]})
+axes[0][0].imshow(latticePlot[0], cmap="bwr")
+axes[0][1].imshow(latticePlot[1], cmap="bwr")
+axes[1][0].imshow(latticePlot[2], cmap="bwr")
+axes[1][1].imshow(latticePlot[3], cmap="bwr")
+plt.show()
