@@ -51,6 +51,8 @@ def Metropolis():
         initialEnergy += -initialSpin * lattice[x, y+1] if y != gridLength-1 else 0
         initialEnergy += -initialSpin * lattice[x-1, y] if x != 0 else 0
         initialEnergy += -initialSpin * lattice[x+1, y] if x != gridLength-1 else 0
+        neighbours = [topSpin, bottomSpin, leftSpin, rightSpin]
+        energy = 0
         
         # Calculate Final Energy
         finalEnergy = 0
@@ -58,10 +60,13 @@ def Metropolis():
         finalEnergy += -proposedSpin * lattice[x, y+1] if y != gridLength-1 else 0
         finalEnergy += -proposedSpin * lattice[x-1, y] if x != 0 else 0
         finalEnergy += -proposedSpin * lattice[x+1, y] if x != gridLength-1 else 0
+        for neighbouringSpin in neighbours:
+            energy -= thisSpin * neighbouringSpin
         
         dE = finalEnergy - initialEnergy
         if (dE > 0) * (np.exp(-beta * (finalEnergy - initialEnergy)) > np.random.random()):
             lattice[x,y] = proposedSpin # Accept the proposed state!
+        return energy
             
         elif dE <= 0:
             lattice[x,y] = proposedSpin # Accept the proposed state!
