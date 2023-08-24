@@ -127,7 +127,7 @@ fig.tight_layout()
 fig.suptitle(r'Evolution of Average Spin and Energy for $\beta J=$1')
 plt.show()
 
-fig, axes = plt.subplots(2, 2, figsize=(5,5), gridspec_kw={'height_ratios': [1, 1]})
+fig, axes = plt.subplots(2, 2, figsize=(5,5), gridspec_kw={'height_ratios': [1, 1]}, subplot_kw={'xticks': [], 'yticks': []})
 axes[0][0].imshow(latticePlot[0], cmap="bwr")
 axes[0][1].imshow(latticePlot[1], cmap="bwr")
 axes[1][0].imshow(latticePlot[2], cmap="bwr")
