@@ -118,7 +118,6 @@ ax = axes[0]
 ax.plot(totSpinVals/gridLength**2)
 ax.set_xlabel('Algorithm Time Steps')
 ax.set_ylabel(r'Average Spin $\bar{m}$')
-ax.grid()
 ax = axes[1]
 ax.plot(totEnergyVals)
 ax.set_xlabel('Algorithm Time Steps')
