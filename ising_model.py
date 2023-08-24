@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 gridLength = 50
 maxTime = 1000000
 beta = 0.2
+T = 0.4
 
 latticePlot = np.zeros((4, gridLength, gridLength))
 
@@ -76,11 +77,10 @@ class Lattice():
             finalEnergy += -proposedSpin * self.lattice[x+1, y] if x != gridLength-1 else 0
             
             dE = finalEnergy - initialEnergy
-            if (dE > 0) * (np.exp(-beta * (finalEnergy - initialEnergy)) > np.random.random()):
+            if dE <= 0:
                 self.lattice[x,y] = proposedSpin # Accept the proposed state!
                 energy += dE
-                
-            elif dE <= 0:
+            elif np.exp(-1/T * (finalEnergy - initialEnergy)) > np.random.random():
                 self.lattice[x,y] = proposedSpin # Accept the proposed state!
                 energy += dE
                 
